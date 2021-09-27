@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "estrella": "./estrella.js",
+    "parcel": "parcel build src/index.js",
+    "snowpack": "snowpack build --polyfill-node",
+    "test": "\"$npm_execpath\" run estrella && \"$npm_execpath\" run snowpack && \"$npm_execpath\" run parcel"
+  },
+  "devDependencies": {
+    "estrella": "^1.4.1",
+    "parcel": "^2.0.0-rc.0",
+    "snowpack": "^3.8.8"
+  },
+  "dependencies": {
+    "keystore-idb": "^0.15.0",
+    "webnative": "file:../webnative"
+  }
+}

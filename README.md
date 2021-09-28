@@ -9,6 +9,7 @@ Bundlers:
 - estrella (esbuild)
 - parcel (v2)
 - snowpack
+- vite
 
 
 Issues:

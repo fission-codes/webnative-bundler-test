@@ -6,7 +6,7 @@
     "snowpack": "snowpack build --polyfill-node",
     "vite": "vite build src --outDir ../dist/",
     "webpack": "webpack",
-    "test": "rimraf dist && rimraf build && \"$npm_execpath\" run estrella && \"$npm_execpath\" run snowpack && \"$npm_execpath\" run parcel && \"$npm_execpath\" run vite"
+    "test": "rimraf dist && rimraf build && \"$npm_execpath\" run estrella && \"$npm_execpath\" run snowpack && \"$npm_execpath\" run parcel && \"$npm_execpath\" run vite && \"$npm_execpath\" run webpack"
   },
   "devDependencies": {
     "estrella": "^1.4.1",

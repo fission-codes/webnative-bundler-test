@@ -5,13 +5,15 @@ yarn install
 yarn run test
 ```
 
-**Build target**:
+**Build target:**
 ```
 es2020
 ```
 
-Bundlers:
+Supported bundlers:
 - estrella (esbuild)
-- parcel (v2)
 - vite
 - webpack
+
+Not supported:
+- parcel (doesn't support `exports` map, https://github.com/parcel-bundler/parcel/issues/4155)

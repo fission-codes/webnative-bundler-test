@@ -1,31 +1,14 @@
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill"
-import rollupNodePolyFill from "rollup-plugin-polyfill-node"
-
-
 export default {
   optimizeDeps: {
     esbuildOptions: {
-      // Node.js global to browser globalThis
       define: {
-        global: "globalThis"
+        "global": "globalThis",
+        "globalThis.process.env.NODE_ENV": "production",
       },
-      // Enable esbuild polyfill plugins
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          process: true,
-          buffer: true
-        }),
-      ]
+      target: "es2020"
     }
   },
   build: {
-    target: "es2020",
-    rollupOptions: {
-      plugins: [
-        // Enable rollup polyfills plugin
-        // used during production bundling
-        rollupNodePolyFill()
-      ]
-    }
-  }
+    target: "es2020"
+  },
 }

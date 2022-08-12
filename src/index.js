@@ -1,2 +1,5 @@
 import * as wn from "webnative"
-// import { strToArrBuf } from "keystore-idb/utils.js"
+
+;(async () => {
+  const fs = await wn.fs.empty()
+})()

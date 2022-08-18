@@ -5,12 +5,15 @@ yarn install
 yarn run test
 ```
 
-Bundlers:
+**Build target:**
+```
+es2020
+```
+
+Supported bundlers:
 - estrella (esbuild)
-- parcel (v2)
-- snowpack
 - vite
+- webpack
 
-
-Issues:
-- Parcel build does not work with `npm`, but does work with `yarn` and `pnpm`. `overrides` in the `package.json` file is not supported yet by `npm`. For some reason we need this override with parcel and not with other bundlers.
+Not supported:
+- parcel (doesn't support `exports` map, https://github.com/parcel-bundler/parcel/issues/4155)

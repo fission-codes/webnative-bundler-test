@@ -3680,10 +3680,10 @@ weak-lru-cache@^1.2.2:
   resolved "https://registry.yarnpkg.com/weak-lru-cache/-/weak-lru-cache-1.2.2.tgz#fdbb6741f36bae9540d12f480ce8254060dccd19"
   integrity sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw==
 
-webnative@0.34.0-alpha-4:
-  version "0.34.0-alpha-4"
-  resolved "https://registry.yarnpkg.com/webnative/-/webnative-0.34.0-alpha-4.tgz#51145c540e1ddda91f019f6be45596dad8a75c58"
-  integrity sha512-VwsA9qXT8168Kv7E+3OTJo7ZNkyzyVdH2i0TzTRaraoQ3Fi2dWmd24avi6ZfbknZ91tR80R6mBA/7XI+s0CfbQ==
+webnative@0.34.0-alpha-5:
+  version "0.34.0-alpha-5"
+  resolved "https://registry.yarnpkg.com/webnative/-/webnative-0.34.0-alpha-5.tgz#73e6cd22d6f9b167207191fac112cca2df6789ba"
+  integrity sha512-vyMl9AKrJ+YjH8JMWrNijEGW2AiGljle2Za11i+n6Woh6DGx5ycYORJcvWEYeYz8IKDG5jpGlF45mdx1uZuBIQ==
   dependencies:
     "@ipld/dag-cbor" "^7.0.2"
     "@ipld/dag-pb" "^2.1.17"

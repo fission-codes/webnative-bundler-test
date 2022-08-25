@@ -20,6 +20,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "webnative": "0.34.0-alpha-4"
+    "webnative": "0.34.0-alpha-5"
   }
 }

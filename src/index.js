@@ -1,26 +1,40 @@
 import * as wn from "webnative"
 
-;(async () => {
-  const fs = await wn.fs.empty({ localOnly: true })
-  const privatePath = wn.path.file(
-    wn.path.Branch.Private,
-    "testing",
-    "write.txt"
-  )
+  ; (async () => {
+    const config = { namespace: "bundler-test" }
 
-  const publicPath = wn.path.directory(
-    wn.path.Branch.Public,
-    "testing",
-    "nested"
-  )
+    const crypto = await wn.defaultCryptoComponent(config)
+    const manners = wn.defaultMannersComponent(config)
+    const storage = wn.defaultStorageComponent(config)
 
-  await fs.write(privatePath, "contents")
-  const contents = await fs.read(privatePath)
+    const depot = await wn.defaultDepotComponent({ storage }, config)
+    const reference = await wn.defaultReferenceComponent({ crypto, manners, storage })
 
-  console.log(contents)
-  console.log(await fs.ls(wn.path.parent(privatePath)))
+    const fs = await wn.FileSystem.empty({
+      account: { rootDID: await wn.did.agent(crypto) },
+      dependencies: { crypto, depot, manners, reference, storage },
+      localOnly: true
+    })
 
-  await fs.mkdir(publicPath)
+    const privatePath = wn.path.file(
+      wn.path.Branch.Private,
+      "testing",
+      "write.txt"
+    )
 
-  console.log(await fs.ls(wn.path.parent(publicPath)))
-})()
+    const publicPath = wn.path.directory(
+      wn.path.Branch.Public,
+      "testing",
+      "nested"
+    )
+
+    await fs.write(privatePath, "contents")
+    const contents = await fs.read(privatePath)
+
+    console.log(contents)
+    console.log(await fs.ls(wn.path.parent(privatePath)))
+
+    await fs.mkdir(publicPath)
+
+    console.log(await fs.ls(wn.path.parent(publicPath)))
+  })()

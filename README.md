@@ -1,8 +1,8 @@
 __Bundler testing facility for [webnative](https://github.com/fission-suite/webnative)__.
 
 ```shell
-yarn install
-yarn run test
+npm install
+npm run test
 ```
 
 **Build target:**

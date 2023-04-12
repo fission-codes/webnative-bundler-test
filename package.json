@@ -20,6 +20,6 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "webnative": "0.35.0"
+    "@oddjs/odd": "0.37.0"
   }
 }

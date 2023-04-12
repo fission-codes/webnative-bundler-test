@@ -1,4 +1,4 @@
-__Bundler testing facility for [webnative](https://github.com/fission-suite/webnative)__.
+__Bundler testing facility for [ODD SDK](https://github.com/oddsdk/ts-odd)__.
 
 ```shell
 npm install

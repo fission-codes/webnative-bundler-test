@@ -6,7 +6,7 @@
     "vite": "vite build src --emptyOutDir --outDir ../dist/ --config vite.config.js",
     "vite-dev": "vite src --config vite.config.js",
     "webpack": "webpack",
-    "worker-importscript": "copyfiles --flat node_modules/webnative/dist/**/*.* build/vendor/webnative/ && webpack --config webpack.worker.config.js && copyfiles --flat src/worker-non-module.html build/",
+    "worker-importscript": "copyfiles --flat node_modules/@oddjs/odd/dist/**/*.* build/vendor/odd/ && webpack --config webpack.worker.config.js && copyfiles --flat src/worker-non-module.html build/",
     "test": "rimraf dist && rimraf build && \"$npm_execpath\" run estrella && \"$npm_execpath\" run vite && \"$npm_execpath\" run webpack && \"$npm_execpath\" run copy-html"
   },
   "devDependencies": {

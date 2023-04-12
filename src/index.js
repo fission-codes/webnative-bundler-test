@@ -1,29 +1,29 @@
-import * as wn from "webnative"
+import * as odd from "@oddjs/odd"
 
   ; (async () => {
     const config = { namespace: "bundler-test" }
 
-    const crypto = await wn.defaultCryptoComponent(config)
-    const manners = wn.defaultMannersComponent(config)
-    const storage = wn.defaultStorageComponent(config)
+    const crypto = await odd.defaultCryptoComponent(config)
+    const manners = odd.defaultMannersComponent(config)
+    const storage = odd.defaultStorageComponent(config)
 
-    const depot = await wn.defaultDepotComponent({ storage }, config)
-    const reference = await wn.defaultReferenceComponent({ crypto, manners, storage })
+    const depot = await odd.defaultDepotComponent({ storage }, config)
+    const reference = await odd.defaultReferenceComponent({ crypto, manners, storage })
 
-    const fs = await wn.FileSystem.empty({
-      account: { rootDID: await wn.did.agent(crypto) },
+    const fs = await odd.FileSystem.empty({
+      account: { rootDID: await odd.did.agent(crypto) },
       dependencies: { crypto, depot, manners, reference, storage },
       localOnly: true
     })
 
-    const privatePath = wn.path.file(
-      wn.path.Branch.Private,
+    const privatePath = odd.path.file(
+      odd.path.RootBranch.Private,
       "testing",
       "write.txt"
     )
 
-    const publicPath = wn.path.directory(
-      wn.path.Branch.Public,
+    const publicPath = odd.path.directory(
+      odd.path.RootBranch.Public,
       "testing",
       "nested"
     )
@@ -32,9 +32,9 @@ import * as wn from "webnative"
     const contents = await fs.read(privatePath)
 
     console.log(contents)
-    console.log(await fs.ls(wn.path.parent(privatePath)))
+    console.log(await fs.ls(odd.path.parent(privatePath)))
 
     await fs.mkdir(publicPath)
 
-    console.log(await fs.ls(wn.path.parent(publicPath)))
+    console.log(await fs.ls(odd.path.parent(publicPath)))
   })()

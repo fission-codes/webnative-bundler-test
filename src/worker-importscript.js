@@ -1,17 +1,17 @@
-importScripts("vendor/webnative/index.umd.min.js")
+importScripts("vendor/odd/index.umd.min.js")
 
-const wn = webnative
+const odd = oddjs
 
   ; (async () => {
     const fs = await wn.fs.empty({ localOnly: true })
     const privatePath = wn.path.file(
-      wn.path.Branch.Private,
+      wn.path.RootBranch.Private,
       "testing",
       "write.txt"
     )
 
     const publicPath = wn.path.directory(
-      wn.path.Branch.Public,
+      wn.path.RootBranch.Public,
       "testing",
       "nested"
     )
